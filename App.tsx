@@ -1,29 +1,21 @@
 import React, { Component } from 'react';
-import type { PropsWithChildren } from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
-  Text,
-  useColorScheme,
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
 import Button from './src/components/Button';
+import Display from './src/components/Display';
 
 export default class App extends Component {
+  state = {
+    displayValue: '0',
+  };
+
   render() {
     return (
         <View style={styles.container}>
+          <Display value={this.state.displayValue} />
           <View style={styles.buttons}>
             <Button label="AC" />
             <Button label="/" />
